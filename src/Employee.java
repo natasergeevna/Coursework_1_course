@@ -21,14 +21,12 @@ public class Employee {
         return this.id;
     }
 
-    public int setDepart(int depart) {
+    public void setDepart(int depart) {
         this.depart = depart;
-        return this.depart;
     }
 
-    public int setSalary(int salary) {
+    public void setSalary(int salary) {
         this.salary = salary;
-        return this.salary;
     }
 
     public Employee(String fullName, int depart, int salary) {

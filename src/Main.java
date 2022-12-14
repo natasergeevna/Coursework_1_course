@@ -8,7 +8,6 @@ public class Main {
         for (Employee employee : emp) {
             sum += employee.getSalary();
         }
-        System.out.println("Сумма затрат на зп в месяц: "+sum);
         return sum;
     }
 
@@ -69,7 +68,7 @@ public class Main {
             System.out.println(employee);
             separator();
         }
-        salaryMonth(employees);
+        System.out.println("Сумма затрат на зп в месяц: " + salaryMonth(employees));
         minSalary(employees);
         maxSalary(employees);
         averageSlary(employees);
