@@ -1,55 +1,4 @@
 public class Main {
-    public static void separator() {
-        System.out.println("--------------------");
-    }
-
-    public static int salaryMonth(Employee[] emp) {
-        int sum = 0;
-        for (Employee employee : emp) {
-            sum += employee.getSalary();
-        }
-        return sum;
-    }
-
-    public static void minSalary(Employee[] emp) {
-        int min = emp[0].getSalary();
-        String person = emp[0].getFullName();
-        for (Employee employee : emp) {
-            if (min >= employee.getSalary()) {
-                min = employee.getSalary();
-                person = employee.getFullName();
-            }
-        }
-        System.out.println("Сотрудник с минимальной зп: " + person);
-    }
-
-    public static void maxSalary(Employee[] emp) {
-        int max = emp[0].getSalary();
-        String person = emp[0].getFullName();
-        for (Employee employee : emp) {
-            if (max <= employee.getSalary()) {
-                max = employee.getSalary();
-                person = employee.getFullName();
-            }
-        }
-        System.out.println("Сотрудник с максимальной зп: " + person);
-    }
-
-    public static void averageSlary(Employee[] emp) {
-        int count = 0;
-        for (int i = 0; i < emp.length; i++) {
-            count++;
-        }
-        System.out.println("Cреднее значение зп: "+salaryMonth(emp) / count);
-    }
-
-    public static void fullName(Employee[] emp) {
-        System.out.println("\nСписок всех сотрудников:");
-        for (Employee employee : emp) {
-            System.out.println(employee.getFullName());
-        }
-    }
-
     public static void main(String[] args) {
         Employee[] employees = new Employee[10];
         employees[0] = new Employee("Shashina Natalia Sergeevna", 1, 200000);
@@ -63,15 +12,16 @@ public class Main {
         employees[8] = new Employee("Shashin Sergey Pavlovich", 2, 90000);
         employees[9] = new Employee("Degtuareva Nadezda Valentinovna", 3, 100000);
 
-        separator();
+        Employee.separator();
         for (Employee employee : employees) {  //8a
             System.out.println(employee);
-            separator();
+            Employee.separator();
         }
-        System.out.println("Сумма затрат на зп в месяц: " + salaryMonth(employees));
-        minSalary(employees);
-        maxSalary(employees);
-        averageSlary(employees);
-        fullName(employees);
+
+        System.out.println("Сумма затрат на зп в месяц: " + Employee.salaryMonth(employees));
+        Employee.minSalary(employees);
+        Employee.maxSalary(employees);
+        Employee.averageSlary(employees);
+        Employee.fullName(employees);
     }
 }
